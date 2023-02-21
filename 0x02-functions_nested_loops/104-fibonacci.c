@@ -1,9 +1,11 @@
 #include <stdio.h>
 /**
- *main-prints Fibonacci number
+ * numLength - returns the length of string
  *
- */
-
+ * @num: operand number
+ *
+ * Return: number of digits
+*/
 int main(void)
 {
 int current = 1;
