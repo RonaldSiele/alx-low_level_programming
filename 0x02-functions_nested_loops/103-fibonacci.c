@@ -1,6 +1,10 @@
 #include <stdio.h>
-
-int main() {
+/**
+ *
+ *main-prints the numbers
+ */
+int main(void)
+{
 int current = 2;
 int previous = 1;
 int temp;
@@ -9,11 +13,12 @@ while (current <= 4000000) {
 temp = current;
 current += previous;
 previous = temp;
-if (current % 2 == 0) {
+if (current % 2 == 0) 
+{
 sum += current;
 }
 }
 printf("%d\n", sum);
-return 0;
+return (0);
 }
 
