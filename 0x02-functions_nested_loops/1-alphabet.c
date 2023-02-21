@@ -2,10 +2,11 @@
 /**
  * print_alphabet - prints all alpha in lowercase
  */
-void print_alphabet(void)
+int main(void)
 {
 char la;
 for (la = 'a'; la <= 'Z'; la++)
-_putchar(la);
-_putchar('\n');
+putchar(la);
+putchar('\n');
+return (0);
 }
