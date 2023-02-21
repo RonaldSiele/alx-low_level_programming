@@ -9,7 +9,8 @@ int current = 2;
 int previous = 1;
 int temp;
 int sum = 2;
-while (current <= 4000000) {
+while (current <= 4000000)
+{
 temp = current;
 current += previous;
 previous = temp;
