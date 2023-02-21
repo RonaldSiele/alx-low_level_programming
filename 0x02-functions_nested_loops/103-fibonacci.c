@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- *
+ *prints the sum of the even-valued terms, followed by a new line.
  *main-prints the numbers
  */
 int main(void)
@@ -14,7 +14,7 @@ while (current <= 4000000)
 temp = current;
 current += previous;
 previous = temp;
-if (current % 2 == 0) 
+if (current % 2 == 0)
 {
 sum += current;
 }
