@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- *
+ *main-prints Fibonacci number
  *
  */
 
