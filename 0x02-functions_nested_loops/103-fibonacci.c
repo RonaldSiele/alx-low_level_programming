@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
- *prints the sum of the even-valued terms, followed by a new line.
- *main-prints the numbers
+ *main-prints the first 4000000 fibonacci numbers
+ *Returns: nothing
  */
 int main(void)
 {
