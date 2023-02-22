@@ -1,7 +1,7 @@
-root@d690682aecdb:/tmp/alx-low_level_programming/0x02-functions_nested_loops# cat 0-putchar.c 
 #include "main.h"
 /**
  * main - Entry point
+ *
  * Return: Always 0 (Success)
  */
 int main(void)
