@@ -1,5 +1,9 @@
 #include <stdio.h>
-
+/**
+ *print_to_98-prints numbers separated by a comma
+ *
+ *
+ */
 void print_to_98(int n) {
     int i;
     if (n <= 98) {
