@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  *print_to_98-prints numbers separated by a comma
- *
+ *n is the integer number
  *
  */
 void print_to_98(int n) {
