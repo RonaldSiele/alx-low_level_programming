@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- *main-counts the first 4000000 fibonacci numbers in line with current and previous
+ *main-counts the first 4000000 fibonacci numbers from prevous to current
  *Returns: nothing!
  */
 int main(void)
