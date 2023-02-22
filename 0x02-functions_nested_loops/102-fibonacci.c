@@ -1,28 +1,20 @@
 #include <stdio.h>
 /**
- *
- *main-counts the fibonnaci
- */
-int main(void)
-{
-int current = 2;
-int previous = 1;
-int temp;
-int count = 2;
-printf("1, 2, ");
-while (count < 50)
-{
-temp = current;
-current += previous;
-previous = temp;
-printf("%d", current);
-if (count < 49)
-{
-printf(", ");
-}
-count++;
+*
+*main-counts the fibonnaci
+*/
+#include <stdio.h>
+
+int main() {
+int a = 1, b = 2, c, i;
+printf("%d, %d, ", a, b);
+for(i=2; i<50; i++) {
+c = a + b;
+printf("%d, ", c);
+a = b;
+b = c;
 }
 printf("\n");
-return (0);
+return 0;
 }
 
