@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  *main-counts the first 4000000 fibonacci numbers from prevous to current
- *Return:sum
+ *Returns:nothing!
  */
 int main(void)
 {
