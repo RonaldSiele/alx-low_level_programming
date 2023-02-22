@@ -1,9 +1,9 @@
 #include <stdio.h>
 /**
- *fib-prints the first 4000000 fibonacci numbers
+ *main-counts the first 4000000 fibonacci numbers in line with current and previous
  *Returns: nothing!
  */
-int fib(void)
+int main(void)
 {
 int current = 2;
 int previous = 1;
