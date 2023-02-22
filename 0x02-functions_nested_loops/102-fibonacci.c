@@ -8,26 +8,25 @@
  *
  * Return: Always 0 (Success)
 */
+int main() {
+    int first = 1;
+    int second = 2;
+    int next;
+    int count = 0;
 
-int main(void)
-{
-	int count;
-	unsigned long fib1 = 0, fib2 = 1, sum;
+    printf("%d, %d, ", first, second);
+    count += 2;
 
-	for (count = 0; count < 50; ++count)
-	{
-		sum = fib1 + fib2;
-		printf("%lu", sum);
+    while (count < 50) {
+        next = first + second;
+        printf("%d, ", next);
+        first = second;
+        second = next;
+        count++;
+    }
 
-		fib1 = fib2;
-		fib2 = sum;
+    printf("\n");
 
-		if (count == 49)
-			printf("\n");
-		else
-			printf(", ");
-	}
-
-	return (0);
+    return 0;
 }
 
