@@ -81,46 +81,75 @@ int _checknum(char *argv[], int n)
  * 
  * Return: 0 - success.
  */
-int main(int argc, char *argv[])
-{
-	int ln1, ln2, lnout, add, addl, i, j, k, ca;
-	char *nout;
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 
-	if (argc != 3)
-		printf("Error\n"), exit(98);
-	ln1 = _checknum(argv, 1), ln2 = _checknum(argv, 2);
-	_is_zero(argv), lnout = ln1 + ln2, nout = malloc(lnout + 1);
-	if (nout == NULL)
-		printf("Error\n"), exit(98);
-	nout = _initialize_array(nout, lnout);
-	k = lnout - 1, i = ln1 - 1, j = ln2 - 1, ca = addl = 0;
-	for (; k >= 0; k--, i--)
-	{
-		if (i < 0)
-		{
-			if (addl > 0)
-			{
-				add = (nout[k] - '0') + addl;
-				if (add > 9)
-					nout[k - 1] = (add / 10) + '0';
-				nout[k] = (add % 10) + '0';
-			}
-			i = ln1 - 1, j--, addl = 0, ca++, k = lnout - (1 + ca);
-		}
-		if (j < 0)
-		{
-			if (nout[0] != '0')
-				break;
-			lnout--;
-			free(nout), nout = malloc(lnout + 1), nout = _initialize_array(nout, lnout);
-			k = lnout - 1, i = ln1 - 1, j = ln2 - 1, ca = addl = 0;
-		}
-		if (j >= 0)
-		{
-			add = ((argv[1][i] - '0') * (argv[2][j] - '0')) + (nout[k] - '0') + addl;
-			addl = add / 10, nout[k] = (add % 10) + '0';
-		}
-	}
-	printf("%s\n", nout);
-	return (0);
+void validate_input(int argc, char* argv[]) {
+    if (argc != 3) {
+        printf("Error\n");
+        exit(98);
+    }
+    char* num1 = argv[1];
+    char* num2 = argv[2];
+    for (int i = 0; i < strlen(num1); i++) {
+        if (!isdigit(num1[i])) {
+            printf("Error\n");
+            exit(98);
+        }
+    }
+    for (int i = 0; i < strlen(num2); i++) {
+        if (!isdigit(num2[i])) {
+            printf("Error\n");
+            exit(98);
+        }
+    }
 }
+
+void multiply(char* num1, char* num2) {
+    int len1 = strlen(num1);
+    int len2 = strlen(num2);
+    int result[len1+len2];
+    memset(result, 0, sizeof(result));
+    int i_n1 = 0;
+    int i_n2 = 0;
+    for (int i = len1-1; i >= 0; i--) {
+        int carry = 0;
+        int n1 = num1[i] - '0';
+        i_n2 = 0;
+        for (int j = len2-1; j >= 0; j--) {
+            int n2 = num2[j] - '0';
+            int sum = n1*n2 + result[i_n1+i_n2] + carry;
+            carry = sum/10;
+            result[i_n1+i_n2] = sum % 10;
+            i_n2++;
+        }
+        if (carry > 0) {
+            result[i_n1+i_n2] += carry;
+        }
+        i_n1++;
+    }
+    int i = len1+len2-1;
+    while (i >= 0 && result[i] == 0) {
+        i--;
+    }
+    if (i == -1) {
+        printf("0\n");
+    }
+    else {
+        while (i >= 0) {
+            printf("%d", result[i--]);
+        }
+        printf("\n");
+    }
+}
+
+int main(int argc, char* argv[]) {
+    validate_input(argc, argv);
+    char* num1 = argv[1];
+    char* num2 = argv[2];
+    multiply(num1, num2);
+    return (0);
+}
+
