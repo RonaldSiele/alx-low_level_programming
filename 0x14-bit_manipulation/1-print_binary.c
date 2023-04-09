@@ -2,9 +2,8 @@
 
 /**
 * print_binary - prints the binary representation
-* of a number in the sequence
 * @n: unsigned long int.
-* Return: no return value
+* Return:returns nothing
 */
 void print_binary(unsigned long int n)
 {
